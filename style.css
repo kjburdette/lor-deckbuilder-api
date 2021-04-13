@@ -38,7 +38,8 @@ button {
   font-weight: bold;
 }
 
-button:hover {
+button:hover,
+select:hover {
   box-shadow: 0 8px 16px 0 rgb(189, 158, 89);
 }
 
@@ -52,4 +53,12 @@ label {
 
 .builder-header {
   font-size: 40px;
+}
+
+.deck-builder {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgb(23, 16, 56);
 }
