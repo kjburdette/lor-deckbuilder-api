@@ -1,12 +1,12 @@
 const searchButton = document.querySelector(".search-button");
 
-// Fetch card data
 // Defining all global variables
 let gameData = [];
 let playerDeck = [];
 let filteredCards = [];
 
 
+// Fetch card data
 const getCardData = async () => {
 
     const data1 = await fetch("./set1-en_us.json")
@@ -19,7 +19,7 @@ const getCardData = async () => {
     const json4 = await data4.json()
 
 
-    gameData = json1.concat(json2, json3, json4) 
+    gameData = json1.concat(json2, json3, json4)
     console.log(gameData)
 }
 
@@ -49,8 +49,6 @@ const filterData = (data) => {
     }
     
     if (cardType === "All"){
-        // filteredCards = filteredCards.filter(filteredCards => filteredCards)
-        // filteredCards = filteredCards.filter(card => card.levelupDescription === "")
         filteredCards = filteredCards.filter(card => card.rarity !== "None")
     } else if(cardType === "Champion") {
         filteredCards = filteredCards.filter(card => card.type === "Unit")
@@ -60,11 +58,13 @@ const filterData = (data) => {
     } else if(cardType === "Unit") {
         filteredCards = filteredCards.filter(card => card.type === "Unit")
         filteredCards = filteredCards.filter(card => card.supertype !== "Champion")
+        filteredCards = filteredCards.filter(card => card.subtype !== "CELESTIAL")
         filteredCards = filteredCards.filter(card => card.levelupDescription === "")
     } else if(cardType === "Spell") {
         filteredCards = filteredCards.filter(card => card.type === "Spell")
         filteredCards = filteredCards.filter(card => card.supertype !== "Champion")
         filteredCards = filteredCards.filter(card => card.rarity !== "None")
+        filteredCards = filteredCards.filter(card => card.subtypes[0] !== "MOON WEAPON")
     } else {
         filteredCards = filteredCards.filter(card => card.type === "Landmark")
     }
