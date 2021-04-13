@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .card img {
   width: 250px;
   transition: transform 0.2s;
@@ -27,6 +33,71 @@ body {
   background-color: rgb(23, 16, 56);
   font-family: "Roboto", sans-serif;
   color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgb(162, 163, 197);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(23, 16, 56);
+}
+
+main {
+  margin-left: 5rem;
+}
+
+.navbar {
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background-color: #171038;
+  transition: 200ms ease;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+}
+
+.nav-link i {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.navbar:hover {
+  width: 14rem;
+}
+
+.navbar:hover .link-text {
+  display: block;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  color: rgb(162, 163, 197);
 }
 
 button {
@@ -36,6 +107,18 @@ button {
   font-size: 18px;
   padding: 4px;
   font-weight: bold;
+  transition: 0.2s all;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus,
+select:focus {
+  outline: none;
 }
 
 button:hover,
@@ -44,7 +127,7 @@ select:hover {
 }
 
 select {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 label {
@@ -61,4 +144,49 @@ label {
   width: 100%;
   z-index: 100;
   background-color: rgb(23, 16, 56);
+}
+
+hr {
+  background-color: rgb(189, 158, 89);
+  height: 1px;
+  border: none;
+}
+
+footer {
+  color: rgb(162, 163, 197);
+}
+
+/* small screen */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+  .link-text {
+    display: none;
+  }
+  .nav-link {
+    justify-content: center;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  main {
+    margin: 0;
+  }
+}
+/* large screen */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+  .navbar:hover {
+    width: 16rem;
+  }
+  .navbar:hover .link-text {
+    display: inline;
+  }
 }

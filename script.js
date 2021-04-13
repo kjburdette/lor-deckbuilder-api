@@ -46,27 +46,28 @@ const filterData = (data) => {
 
     if (region !== "All") {
         filteredCards = filteredCards.filter(card => card.regionRef === region);
+        filteredCards = filteredCards.filter(card => card.subtypes[0] !== "MOON WEAPON");
     }
     
     if (cardType === "All"){
-        filteredCards = filteredCards.filter(card => card.rarity !== "None")
+        filteredCards = filteredCards.filter(card => card.rarity !== "None");
     } else if(cardType === "Champion") {
-        filteredCards = filteredCards.filter(card => card.type === "Unit")
-        filteredCards = filteredCards.filter(card => card.supertype === cardType)
-        filteredCards = filteredCards.filter(card => card.levelupDescription)
-        filteredCards = filteredCards.filter(card => card.rarity !== "None")
+        filteredCards = filteredCards.filter(card => card.type === "Unit");
+        filteredCards = filteredCards.filter(card => card.supertype === cardType);
+        filteredCards = filteredCards.filter(card => card.levelupDescription);
+        filteredCards = filteredCards.filter(card => card.rarity !== "None");
     } else if(cardType === "Unit") {
-        filteredCards = filteredCards.filter(card => card.type === "Unit")
-        filteredCards = filteredCards.filter(card => card.supertype !== "Champion")
-        filteredCards = filteredCards.filter(card => card.subtype !== "CELESTIAL")
-        filteredCards = filteredCards.filter(card => card.levelupDescription === "")
+        filteredCards = filteredCards.filter(card => card.type === "Unit");
+        filteredCards = filteredCards.filter(card => card.supertype !== "Champion");
+        filteredCards = filteredCards.filter(card => card.subtype !== "CELESTIAL");
+        filteredCards = filteredCards.filter(card => card.levelupDescription === "");
     } else if(cardType === "Spell") {
-        filteredCards = filteredCards.filter(card => card.type === "Spell")
-        filteredCards = filteredCards.filter(card => card.supertype !== "Champion")
-        filteredCards = filteredCards.filter(card => card.rarity !== "None")
-        filteredCards = filteredCards.filter(card => card.subtypes[0] !== "MOON WEAPON")
+        filteredCards = filteredCards.filter(card => card.type === "Spell");
+        filteredCards = filteredCards.filter(card => card.supertype !== "Champion");
+        filteredCards = filteredCards.filter(card => card.rarity !== "None");
+        filteredCards = filteredCards.filter(card => card.subtypes[0] !== "MOON WEAPON");
     } else {
-        filteredCards = filteredCards.filter(card => card.type === "Landmark")
+        filteredCards = filteredCards.filter(card => card.type === "Landmark");
     }
 
     console.log(filteredCards)
