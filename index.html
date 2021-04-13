@@ -4,9 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LOR Deckbuilder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+        <h1 class="header">Deck Builder</h1>
+        <label for="set-select">Set:</label>
+        <select name="set-select" class="set-select">
+            <option value="All">All</option>
+            <option value="Set1">Launch</option>
+            <option value="Set2">The Rising Tides</option>
+            <option value="Set3">Call of The Mountain</option>
+            <option value="Set4">Empire of The Ascended</option>
+        </select>
+        <label for="region-select">Region:</label>
+        <select name="region-select" class="region-select">
+            <option value="All">All</option>
+            <option value="Bilgewater">Bilgewater</option>
+            <option value="Demacia">Demacia</option>
+            <option value="ShadowIsles">Shadow Isles</option>
+            <option value="PiltoverZaun">Piltover & Zaun</option>
+            <option value="Freljord">Freljord</option>
+            <option value="Shurima">Shurima</option>
+            <option value="Ionia">Ionia</option>
+            <option value="Targon">Targon</option>
+            <option value="Noxus">Noxus</option>
+        </select>
+        <label for="card-type">Card Type:</label>
+        <select name="card-type" class="card-type">
+            <option value="All">All</option>
+            <option value="Champion">Champion</option>
+            <option value="Spell">Spell</option>
+            <option value="Unit">Follower</option>
+            <option value="Landmark">Landmark</option>
+        </select>
+        <button type="button" class="search-button">Search</button>
+
+        <div class="main-container"></div>
 </body>
+<script src="script.js"></script>
 </html>

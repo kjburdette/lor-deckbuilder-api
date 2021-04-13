@@ -1,0 +1,30 @@
+.card img {
+  width: 275px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+body {
+  background-color: rgb(23, 16, 56);
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+button {
+  background-color: rgb(162, 163, 197);
+  font-family: "Roboto", sans-serif;
+  color: rgb(23, 16, 56);
+  font-size: 18px;
+}
