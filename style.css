@@ -1,5 +1,10 @@
 .card img {
-  width: 275px;
+  width: 250px;
+  transition: transform 0.2s;
+}
+
+.card img:hover {
+  transform: scale(1.1);
 }
 
 .card {
@@ -7,6 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .main-container {
@@ -27,4 +33,22 @@ button {
   font-family: "Roboto", sans-serif;
   color: rgb(23, 16, 56);
   font-size: 18px;
+  padding: 4px;
+  font-weight: bold;
+}
+
+button:hover {
+  box-shadow: 0 8px 16px 0 rgb(189, 158, 89);
+}
+
+select {
+  font-size: 18px;
+}
+
+label {
+  font-size: 20px;
+}
+
+.builder-header {
+  font-size: 40px;
 }
