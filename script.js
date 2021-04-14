@@ -25,25 +25,21 @@ const getCardData = async () => {
 
 getCardData();
 
-const addCardToDeck = (index) => {
-    playerDeck.push(filteredCards[index]);
-    console.log(playerDeck);
-} 
 
 const filterData = (data) => {
     let container = document.querySelector(".main-container");
     container.innerHTML = "";
-
+    
     let set = document.querySelector(".set-select").value;
     let region = document.querySelector(".region-select").value;
     let cardType = document.querySelector(".card-type").value;
-
+    
     filteredCards = data.filter(data => data);
-
+    
     if (set !== "All"){
         filteredCards = filteredCards.filter(card => card.set === set);
     }
-
+    
     if (region !== "All") {
         filteredCards = filteredCards.filter(card => card.regionRef === region);
         filteredCards = filteredCards.filter(card => card.subtypes[0] !== "MOON WEAPON");
@@ -69,18 +65,22 @@ const filterData = (data) => {
     } else {
         filteredCards = filteredCards.filter(card => card.type === "Landmark");
     }
-
+    
     console.log(filteredCards)
-
+    
     filteredCards.forEach((card, i) => {
-            var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
-            var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
-            var cardDiv = `<div class="card">${imageDiv} ${buttonDiv}</div>`;
-            container.insertAdjacentHTML('beforeend', cardDiv)
-
+        var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
+        var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
+        var cardDiv = `<div class="card">${imageDiv} ${buttonDiv}</div>`;
+        container.insertAdjacentHTML('beforeend', cardDiv)
+        
     })
 }
 
+const addCardToDeck = (index) => {
+    playerDeck.push(filteredCards[index]);
+    console.log(playerDeck);
+} 
 
 searchButton.addEventListener('click', function() {
     filterData(gameData)
