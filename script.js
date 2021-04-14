@@ -17,14 +17,30 @@ const getCardData = async () => {
     const json2 = await data2.json()
     const json3 = await data3.json()
     const json4 = await data4.json()
-
-
+    
+    
     gameData = json1.concat(json2, json3, json4)
     console.log(gameData)
 }
 
 getCardData();
 
+const addCardToDeck = (index) => {
+    playerDeck.push(filteredCards[index]);
+    console.log(playerDeck);
+    var cardCount = playerDeck.length
+    var cardsInDeck = document.querySelector(".card-count")
+    cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
+    
+    // playerDeck.forEach((card, i) => {
+    //     var deckDiv = document.querySelector(".player-deck")
+    //     var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
+    //     var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
+    //     var cardDiv = `<div class="card">${imageDiv} ${buttonDiv}</div>`;
+    //     deckDiv.insertAdjacentHTML('beforeend', cardDiv)
+
+
+}
 
 const filterData = (data) => {
     let container = document.querySelector(".main-container");
@@ -81,20 +97,7 @@ const filterData = (data) => {
     }else {
         container.innerHTML = "No cards were found. Adjust filters for more cards."
     }
-
 }
-
-const addCardToDeck = (index) => {
-    playerDeck.push(filteredCards[index]);
-    console.log(playerDeck);
-    // var assests = 
-    // var cardDiv = document.querySelector(".player-deck");
-    // var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
-    // // var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
-    // cardDiv.innerHTML(imageDiv,buttonDiv)
-
-} 
-
 
 
 
@@ -110,3 +113,5 @@ selects.forEach((select) => {
         filterData(gameData)
     })
 })
+
+
