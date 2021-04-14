@@ -65,28 +65,45 @@ const filterData = (data) => {
     } else {
         filteredCards = filteredCards.filter(card => card.type === "Landmark");
     }
-    
     console.log(filteredCards)
     
-    filteredCards.forEach((card, i) => {
-        var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
-        var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
-        var cardDiv = `<div class="card">${imageDiv} ${buttonDiv}</div>`;
-        container.insertAdjacentHTML('beforeend', cardDiv)
-        
-    })
+    if (filteredCards.length){
+        filteredCards.forEach((card, i) => {
+            filteredCards.sort(function (a, b) {
+                return a.cost - b.cost
+                })
+            var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
+            var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
+            var cardDiv = `<div class="card">${imageDiv} ${buttonDiv}</div>`;
+            container.insertAdjacentHTML('beforeend', cardDiv)
+            
+        })
+    }else {
+        container.innerHTML = "No cards were found. Adjust filters for more cards."
+    }
+
 }
 
 const addCardToDeck = (index) => {
     playerDeck.push(filteredCards[index]);
     console.log(playerDeck);
+    // var assests = 
+    // var cardDiv = document.querySelector(".player-deck");
+    // var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
+    // // var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
+    // cardDiv.innerHTML(imageDiv,buttonDiv)
+
 } 
 
+
+
+
+// Event listener for submit on click
 searchButton.addEventListener('click', function() {
     filterData(gameData)
 })
 
-
+// Event listener for select fields on change
 let selects = document.querySelectorAll("select");
 selects.forEach((select) => {
     select.addEventListener("change", function() {
