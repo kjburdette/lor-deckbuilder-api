@@ -45,7 +45,7 @@ const addCardToDeck = (index) => {
     cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
 
     if (cardsInStorage){
-        var totalCards = [...JSON.parse(localStorage["CardsInStorage"]),...playerDeck ]
+        var totalCards = [...JSON.parse(localStorage["CardsInStorage"]),filteredCards[index] ]
         localStorage.setItem("CardsInStorage", JSON.stringify(totalCards))
     } else {
         var totalCards = [...playerDeck ]
