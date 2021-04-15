@@ -83,16 +83,29 @@ main {
   align-items: center;
   height: 100%;
   border-right: rgb(189, 158, 89) 1.5px solid;
+  font-weight: bold;
 }
 
 .nav-item {
   width: 100%;
+  font-size: 1.3rem;
+}
+
+.nav-item:hover {
+  background-color: rgb(189, 158, 89);
+}
+
+.nav-item:hover span,
+.nav-item:hover i {
+  background-color: rgb(189, 158, 89);
+  color: rgb(23, 16, 56);
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   height: 5rem;
+  text-decoration: none;
 }
 
 .nav-link i {
@@ -170,6 +183,7 @@ label {
   margin: 5px;
   position: sticky;
   top: 0;
+  font-weight: bold;
 }
 
 hr {
@@ -179,13 +193,8 @@ hr {
 }
 
 .home-banner {
-  width: 60%;
   font-size: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 8px 16px 0 rgb(189, 158, 89 / 72%);
-  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 72%);
   text-align: center;
-  background-color: rgba(23, 16, 56, 0.75);
 }
 
 .home-banner h1,
@@ -227,13 +236,14 @@ a:visited {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url(https://fastcdn.mobalytics.gg/assets/lol/images/page-background/search/search-2000.jpg);
+  background: url(https://fastcdn.mobalytics.gg/assets/tft/images/champions/page-background/set4/lee-sin.jpg);
   background-size: contain;
 }
 
 .about-container {
   width: 50%;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
   border-radius: 1rem;
   box-shadow: 0 8px 16px 0 rgb(189, 158, 89 / 72%);
   box-shadow: 0 8px 16px 0 rgb(0 0 0 / 72%);
@@ -261,8 +271,8 @@ a:visited {
   color: rgb(189, 158, 89);
   overflow: scroll;
   height: 85vh;
-  background: url(https://fastcdn.mobalytics.gg/assets/valorant/images/agents-backgrounds/page/breach.jpg);
-  background-size: contain;
+  background: url(https://fastcdn.mobalytics.gg/assets/tft/images/champions/page-background/set4/jinx.jpg);
+  background-size: cover;
 }
 
 /* small screen */
