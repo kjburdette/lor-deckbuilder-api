@@ -33,11 +33,6 @@ if (cardsInStorage) {
         cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
 }
 
-// var cardCount = JSON.parse(localStorage["CardsInStorage"]).length
-// var cardsInDeck = document.querySelector(".card-count")
-// cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
-
-// var totalCards = [...JSON.parse(localStorage["CardsInStorage"]),...playerDeck ]
 
 const addCardToDeck = (index) => {
     playerDeck.push(filteredCards[index]);
@@ -137,7 +132,7 @@ selects.forEach((select) => {
     })
 })
 
-
+// Clear local storage on click
 const reset = document.querySelector(".reset-button")
 reset.addEventListener('click', function() {
     cardCount = 0; 
