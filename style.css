@@ -228,12 +228,21 @@ a:visited {
   text-decoration-color: rgb(189, 158, 89);
 }
 
+.player-deck {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px;
+}
+
 /* small screen */
 @media only screen and (max-width: 600px) {
   .navbar {
     bottom: 0;
     width: 100vw;
     height: 5rem;
+    /* z-index: 1; */
   }
   .link-text {
     display: none;

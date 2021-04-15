@@ -25,23 +25,46 @@ const getCardData = async () => {
 
 getCardData();
 
-const addCardToDeck = (index) => {
-    playerDeck.push(filteredCards[index]);
-    console.log(playerDeck);
-    var cardCount = playerDeck.length
-    var cardsInDeck = document.querySelector(".card-count")
-    cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
-    
-    // playerDeck.forEach((card, i) => {
-    //     var deckDiv = document.querySelector(".player-deck")
-    //     var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
-    //     var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
-    //     var cardDiv = `<div class="card">${imageDiv} ${buttonDiv}</div>`;
-    //     deckDiv.insertAdjacentHTML('beforeend', cardDiv)
-
-
+var cardsInDeck = document.querySelector(".card-count")
+let cardCount = 0
+var cardsInStorage = localStorage.getItem("CardsInStorage");
+if (cardsInStorage) {
+        cardCount = JSON.parse(localStorage["CardsInStorage"]).length
+        cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
 }
 
+// var cardCount = JSON.parse(localStorage["CardsInStorage"]).length
+// var cardsInDeck = document.querySelector(".card-count")
+// cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
+
+// var totalCards = [...JSON.parse(localStorage["CardsInStorage"]),...playerDeck ]
+
+const addCardToDeck = (index) => {
+    playerDeck.push(filteredCards[index]);
+    cardCount++ 
+    cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
+
+    if (cardsInStorage){
+        var totalCards = [...JSON.parse(localStorage["CardsInStorage"]),...playerDeck ]
+        localStorage.setItem("CardsInStorage", JSON.stringify(totalCards))
+    } else {
+        var totalCards = [...playerDeck ]
+        localStorage.setItem("CardsInStorage", JSON.stringify(totalCards))
+    }
+//     playerDeck.forEach((card, i) => {
+//         if ((card.name) < 3 || (card.rarity="Champion") < 6){
+//             var deckDiv = document.querySelector(".player-deck")
+//             var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
+//             var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
+//             var cardDiv = `<div class="card">${imageDiv} ${buttonDiv}</div>`;
+//             deckDiv.insertAdjacentHTML('beforeend', cardDiv)
+//         }else {
+//             alert("You have too many of that card in your deck.")
+//         }
+
+
+// })}
+}
 const filterData = (data) => {
     let container = document.querySelector(".main-container");
     container.innerHTML = "";
@@ -84,10 +107,10 @@ const filterData = (data) => {
     console.log(filteredCards)
     
     if (filteredCards.length){
+        filteredCards.sort(function (a, b) {
+            return a.cost - b.cost
+            })
         filteredCards.forEach((card, i) => {
-            filteredCards.sort(function (a, b) {
-                return a.cost - b.cost
-                })
             var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
             var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
             var cardDiv = `<div class="card">${imageDiv} ${buttonDiv}</div>`;
@@ -114,4 +137,11 @@ selects.forEach((select) => {
     })
 })
 
+
+const reset = document.querySelector(".reset-button")
+reset.addEventListener('click', function() {
+    cardCount = 0; 
+    cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
+    localStorage.removeItem("CardsInStorage")
+})
 
