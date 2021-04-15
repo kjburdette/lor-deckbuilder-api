@@ -116,6 +116,11 @@ button {
   transition: 0.2s all;
   border: none;
   border-radius: 0.2rem;
+  margin: 5px;
+}
+
+.deck-editor button.reset-button {
+  margin-left: 0;
 }
 
 button:active {
@@ -147,8 +152,12 @@ label {
 }
 
 .deck-editor {
-  font-size: 20px;
+  /* font-size: 20px; */
   margin: 10px;
+}
+
+.deck-editor h1 {
+  font-size: 40px;
 }
 
 .deck-builder {
@@ -205,8 +214,8 @@ a:visited {
 }
 
 .about-container {
-  width: 80%;
-  height: 38%;
+  width: 50%;
+  height: 35%;
   overflow: auto;
   margin: auto;
   position: absolute;
@@ -215,17 +224,18 @@ a:visited {
   bottom: 0;
   right: 0;
   font-size: 1.5rem;
-  /* border: 1.5px solid rgb(189, 158, 89); */
   border-radius: 1rem;
   box-shadow: 0 8px 16px 0 rgb(189, 158, 89 / 72%);
   box-shadow: 0 8px 16px 0 rgb(0 0 0 / 72%);
   text-align: center;
   font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .about-container h1 {
   text-decoration: underline;
   text-decoration-color: rgb(189, 158, 89);
+  margin-bottom: 10px;
 }
 
 .player-deck {
@@ -242,13 +252,21 @@ a:visited {
     bottom: 0;
     width: 100vw;
     height: 5rem;
-    /* z-index: 1; */
+    z-index: 3;
   }
+
+  .deck-builder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .link-text {
     display: none;
   }
   .nav-link {
     justify-content: center;
+    /* display: none; */
   }
   .navbar-nav {
     flex-direction: row;
