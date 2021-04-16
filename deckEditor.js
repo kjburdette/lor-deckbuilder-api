@@ -1,8 +1,5 @@
 let cards = localStorage["CardsInStorage"] 
 let parsedCards = JSON.parse(cards).length > 0?JSON.parse(cards):[]
-console.log(parsedCards)
-
-
 var cardsInDeck = document.querySelector(".card-count")
 let cardCount = 0
 var cardsInStorage = localStorage.getItem("CardsInStorage");
@@ -11,7 +8,6 @@ if (cardsInStorage) {
     cardCount = JSON.parse(localStorage["CardsInStorage"]).length
     cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
 }
-
 
 if (parsedCards.length > 0){
     parsedCards.forEach((card, i) => {

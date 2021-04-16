@@ -5,17 +5,8 @@ let gameData = [];
 let playerDeck = [];
 let filteredCards = [];
 
-
-var counts = {}
-
-
-
-console.log(counts)
-
-
 // Fetch card data
 const getCardData = async () => {
-
     const data1 = await fetch("./set1-en_us.json")
     const data2 = await fetch("./set2-en_us.json")
     const data3 = await fetch("./set3-en_us.json")
@@ -25,9 +16,7 @@ const getCardData = async () => {
     const json3 = await data3.json()
     const json4 = await data4.json()
     
-    
     gameData = json1.concat(json2, json3, json4)
-    console.log(gameData)
 }
 
 getCardData();
@@ -36,8 +25,8 @@ var cardsInDeck = document.querySelector(".card-count")
 let cardCount = 0
 var cardsInStorage = localStorage.getItem("CardsInStorage");
 if (cardsInStorage) {
-        cardCount = JSON.parse(localStorage["CardsInStorage"]).length
-        cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
+    cardCount = JSON.parse(localStorage["CardsInStorage"]).length
+    cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
 }
 if(cardCount) {
     for (var i = 0; i < cardCount; i++) {
@@ -48,8 +37,7 @@ if(cardCount) {
 
 
 const addCardToDeck = (index) => {
-    console.log(cardCount)
-    if (cardCount < 39) {
+    if (cardCount < 40) {
         playerDeck.push(filteredCards[index]);
         if (cardCount){
             var totalCards = [...JSON.parse(localStorage["CardsInStorage"]),filteredCards[index] ]
@@ -60,17 +48,6 @@ const addCardToDeck = (index) => {
         }
         cardCount++ 
         cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
-
-        // counts = {};
-        // for (var i = 0; i < cardCount; i++) {
-        //     var num = JSON.parse(localStorage["CardsInStorage"])[i]
-        //     counts[num] = counts[num] ? counts[num] + 1 : 1
-        // }
-        
-        // console.log(counts)
-        // console.log(JSON.stringify(counts))
-        // console.log(counts.toString())
-        
     } else {
         alert("Too many cards in deck. Visit the deck editor.")
     }
@@ -120,7 +97,7 @@ const filterData = (data) => {
     if (filteredCards.length){
         filteredCards.sort(function (a, b) {
             return a.cost - b.cost
-            })
+        })
         filteredCards.forEach((card, i) => {
             var imageDiv = `<img src=${card.assets[0].gameAbsolutePath}>`;
             var buttonDiv = `<button onClick="addCardToDeck(${i})">Add to Deck</button>`;
