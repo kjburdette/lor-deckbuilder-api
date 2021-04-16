@@ -32,6 +32,8 @@
   height: 85vh;
   background: url(https://fastcdn.mobalytics.gg/assets/tft/images/champions/page-background/set4-5/swain.jpg);
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .main-container::-webkit-scrollbar,
@@ -157,6 +159,9 @@ select:hover {
 select {
   font-size: 20px;
   margin: 10px;
+  border-radius: 8px;
+  background-color: rgb(162, 163, 197);
+  /* color: white; */
 }
 
 label {
@@ -224,11 +229,18 @@ a:visited {
 
 .about-main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url(https://fastcdn.mobalytics.gg/assets/tft/images/champions/page-background/set4/veigar.jpg);
+  background: url(https://fastcdn.mobalytics.gg/assets/tft/images/champions/page-background/set5/darius.jpg);
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-link {
+  margin-top: 20px;
 }
 
 .home-container {
@@ -238,16 +250,16 @@ a:visited {
   height: 100vh;
   background: url(https://fastcdn.mobalytics.gg/assets/tft/images/champions/page-background/set4/lee-sin.jpg);
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .about-container {
   width: 50%;
   font-size: 1.4rem;
-  font-weight: bold;
   border-radius: 1rem;
   box-shadow: 0 8px 16px 0 rgb(189, 158, 89 / 72%);
   box-shadow: 0 8px 16px 0 rgb(0 0 0 / 72%);
-  text-align: center;
   font-family: "Roboto", sans-serif;
   padding: 10px;
   padding-bottom: 20px;
@@ -260,6 +272,7 @@ a:visited {
   text-decoration: underline;
   text-decoration-color: rgb(189, 158, 89);
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .player-deck {
@@ -271,8 +284,10 @@ a:visited {
   color: rgb(189, 158, 89);
   overflow: scroll;
   height: 85vh;
-  background: url(https://fastcdn.mobalytics.gg/assets/tft/images/champions/page-background/set4/jinx.jpg);
+  background: url(https://fastcdn.mobalytics.gg/assets/tft/images/champions/page-background/set4/diana.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* small screen */
@@ -313,6 +328,13 @@ a:visited {
 
   select {
     width: 60%;
+  }
+
+  .about-main {
+    height: calc(100vh - 80px);
+    overflow: scroll;
+    padding: 40px 0px;
+    justify-content: unset;
   }
 }
 /* large screen */
