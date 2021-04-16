@@ -8,8 +8,12 @@ In the future I'd like to add a back-end where users can register an account and
 to the select buttons are needed to help distinguish the options more easily. Eventually figuring out a way to generate the deck code
 to export to the live game is also a BIG next step.
 
+#Links
+
+Link to github pages : https://kjburdette.github.io/lor-deckbuilder-api/
+
+#Screenshots
 ![image](https://user-images.githubusercontent.com/80011655/114933232-72ec1900-9e06-11eb-885b-3ff4438cab7a.png)
 ![image](https://user-images.githubusercontent.com/80011655/114959082-5239b880-9e32-11eb-8d70-844e3cdb44ed.png)
 ![image](https://user-images.githubusercontent.com/80011655/114933509-bba3d200-9e06-11eb-935d-fd0bc1f10b44.png)
 
-Link to github pages : https://kjburdette.github.io/lor-deckbuilder-api/
