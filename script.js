@@ -28,12 +28,6 @@ if (cardsInStorage) {
     cardCount = JSON.parse(localStorage["CardsInStorage"]).length
     cardsInDeck.innerHTML = `Cards in deck: ${cardCount}/40`
 }
-if(cardCount) {
-    for (var i = 0; i < cardCount; i++) {
-        var num = JSON.parse(localStorage["CardsInStorage"])[i]
-        counts[num] = counts[num] ? counts[num] + 1 : 1
-    }
-}
 
 
 const addCardToDeck = (index) => {
