@@ -11,6 +11,7 @@ to export to the live game is also a BIG next step.
 # Links
 
 Link to github pages : https://kjburdette.github.io/lor-deckbuilder-api/
+
 Brief medium article: https://kjburdette2015.medium.com/legends-of-runeterra-deckbuilder-project-a681aeaf92ec
 
 # Screenshots
