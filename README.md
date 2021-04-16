@@ -1,4 +1,4 @@
-# lor-deckbuilder api
+# Legends of Runeterra Deckbuilder api
 The Legends of Runeterra Deckbuilder is a front-end web-app that uses JSON data from RIOT Games, HTML, and Javascript. The main
 feature is a card sorter that will filter the cards based of the preferences in the select menus. All cards that are selected are
 pushed to local storage. Users can then view the cards they've selected in the deck editor and remove them if they choose. There
